@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ListController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ListController">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="320.0" layoutY="38.0" text="게시판 프로그램" textAlignment="CENTER">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="425.0" layoutY="40.0" text="LIST" textAlignment="CENTER">
          <font>
             <Font size="40.0" />
          </font>
@@ -23,7 +23,12 @@
             <TableColumn fx:id="colView" prefWidth="120.0" text="조회수" />
         </columns>
       </TableView>
-      <Button layoutX="736.0" layoutY="549.0" mnemonicParsing="false" onAction="#toInsert" prefHeight="55.0" prefWidth="100.0" text="글쓰기">
+      <Button fx:id="write" layoutX="736.0" layoutY="549.0" mnemonicParsing="false" onAction="#toInsert" prefHeight="55.0" prefWidth="100.0" text="ADD">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="ListBackToMain" layoutX="96.0" layoutY="549.0" mnemonicParsing="false" onAction="#toMain" prefHeight="55.0" prefWidth="100.0" text="Main">
          <font>
             <Font size="20.0" />
          </font>
