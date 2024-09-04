@@ -8,6 +8,8 @@ import javafx.fxml.FXML;
 
 public class ReadController {
 
+	int boardNo;
+	
     @FXML
     void back(ActionEvent event) throws IOException {
     	Main.setRoot("UI/List");
@@ -17,5 +19,9 @@ public class ReadController {
     void toChange(ActionEvent event) throws IOException {
     	Main.setRoot("UI/Write");
     }
+
+	public void passData(int boardNo) {
+		this.boardNo = boardNo;
+	}
 
 }

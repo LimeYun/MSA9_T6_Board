@@ -2,7 +2,7 @@ package application.Service;
 
 import java.util.List;
 
-import application.Board;
+import application.DTO.Board;
 
 /*
  * 게시판 프로그램 - 기능 메소드

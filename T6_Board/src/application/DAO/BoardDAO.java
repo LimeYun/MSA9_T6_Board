@@ -4,12 +4,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import application.Board;
+import application.DTO.Board;
+import application.DTO.JDBC;
 /*
  * 데이터 접근 객체
  * - 게시글 데이터를 접근
  */
-public class BoardDAO extends JDBConnection {
+public class BoardDAO extends JDBC {
 	/**
 	 * 데이터 목록
 	 * @return
@@ -38,7 +39,8 @@ public class BoardDAO extends JDBConnection {
 				board.setWriter(rs.getString("writer"));
 				board.setContent(rs.getString("content"));
 				board.setRegDate(rs.getTimestamp("reg_date"));
-				board.setUpdDate(rs.getTimestamp("up_date"));	// sql에 upd_date 인데 up_date라고 해놧음
+				board.setUpdDate(rs.getTimestamp("upd_date"));	// sql에 upd_date 인데 up_date라고 해놧음
+				board.setView(rs.getInt("view"));
 				
 				// 게시글 목록 추가
 				boardList.add(board);
@@ -88,7 +90,8 @@ public class BoardDAO extends JDBConnection {
 				board.setWriter(rs.getString("writer"));
 				board.setContent(rs.getString("content"));
 				board.setRegDate(rs.getTimestamp("reg_date"));
-				board.setUpdDate(rs.getTimestamp("up_date"));
+				board.setUpdDate(rs.getTimestamp("upd_date"));
+				board.setView(rs.getInt("view"));
 			}
 		} catch (SQLException e) {
 			System.err.println("게시글 조회 시, 예외 발생");
@@ -140,7 +143,7 @@ public class BoardDAO extends JDBConnection {
 				+ " SET title = ? "
 				+ " 	, writer = ? "
 				+ " 	, content = ? "
-				+ " 	, up_date = now() "	// upd_date 수정
+				+ " 	, upd_date = now() "	// upd_date 수정
 				+ " WHERE no = ? ";
 		
 		try {

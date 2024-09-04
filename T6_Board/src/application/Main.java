@@ -16,7 +16,6 @@ public class Main extends Application {
 	@Override
 	public void start(Stage stage) throws IOException {
 		scene = new Scene(loadFXML("UI/Main"), 930, 650);
-		scene = new Scene(loadFXML("Main"));
 		stage.setScene(scene);
 		
 //		Image icon = new Image("icon.png");

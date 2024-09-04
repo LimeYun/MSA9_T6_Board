@@ -2,8 +2,8 @@ package application.Service;
 
 import java.util.List;
 
-import application.Board;
 import application.DAO.BoardDAO;
+import application.DTO.Board;
 
 /*
  * 게시판 기능 - 비즈니스 로직 클래스
