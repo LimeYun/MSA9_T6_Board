@@ -1,9 +1,10 @@
-package application;
+package application.DTO;
 
 import java.util.Date;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /*
  * (DTO)
@@ -18,6 +19,7 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Board {
 	
 	private int no;
@@ -27,13 +29,14 @@ public class Board {
 	private Date regDate;
 	private Date updDate;
 	private int view;
-	public Board() {
-		this("(제목 없음)","(작성자 없음)","");
-	}
+	
 	public Board(String title, String writer, String content) {
 		this.title = title;
 		this.writer = writer;
 		this.content = content;
+		this.regDate = new Date();
+		this.updDate = new Date();
+		this.view = 0;
 	}
 
 }

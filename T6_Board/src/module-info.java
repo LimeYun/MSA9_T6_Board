@@ -6,4 +6,5 @@ module T6_Board {
 	requires java.sql;
 	opens application to javafx.base, javafx.graphics, javafx.fxml,
 	lombok, java.sql;
+	opens application.Controller to javafx.base, javafx.fxml;
 }

@@ -15,8 +15,13 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage stage) throws IOException {
-		scene = new Scene(loadFXML("Main"), 600, 400);
+		scene = new Scene(loadFXML("UI/Main"), 930, 650);
 		stage.setScene(scene);
+		
+//		Image icon = new Image("icon.png");
+//		stage.getIcons().add(icon);
+		stage.setTitle("T6_Board");
+		stage.setResizable(false);
 		stage.show();
 	}
 	
@@ -25,8 +30,11 @@ public class Main extends Application {
 	 * @param fxml
 	 * @throws IOException
 	 */
-	static void setRoot(String fxml) throws IOException {
+	public static void setRoot(String fxml) throws IOException {
 		scene.setRoot(loadFXML(fxml));
+	}
+	public static void setRoot(Parent root) throws IOException {
+		scene.setRoot(root);
 	}
 	
 	/**
