@@ -6,21 +6,22 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="159.0" layoutY="43.0" prefHeight="42.0" prefWidth="282.0" text="게시판 프로그램">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="325.0" layoutY="144.0" prefHeight="42.0" prefWidth="282.0" text="게시판 프로그램">
          <font>
             <Font size="35.0" />
          </font>
       </Label>
-      <VBox alignment="CENTER" layoutX="197.0" layoutY="116.0" prefHeight="241.0" prefWidth="206.0" spacing="30.0">
+      <VBox alignment="CENTER" layoutX="197.0" layoutY="116.0" prefHeight="241.0" prefWidth="206.0" spacing="30.0" />
+      <VBox alignment="CENTER" layoutX="336.0" layoutY="186.0" prefHeight="343.0" prefWidth="259.0" spacing="20.0">
          <children>
             <Button fx:id="btnList" mnemonicParsing="false" onAction="#toList" prefHeight="50.0" prefWidth="175.0" text="게시글 목록">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button fx:id="btnExit" mnemonicParsing="false" onAction="#exit" prefHeight="50.0" prefWidth="175.0" text="종료하기">
+            <Button fx:id="btnExit" alignment="CENTER" mnemonicParsing="false" onAction="#exit" prefHeight="50.0" prefWidth="175.0" text="종료하기">
                <font>
                   <Font size="24.0" />
                </font>

@@ -5,6 +5,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ListController">
@@ -23,10 +24,24 @@
             <TableColumn fx:id="colView" prefWidth="120.0" text="조회수" />
         </columns>
       </TableView>
-      <Button layoutX="736.0" layoutY="549.0" mnemonicParsing="false" onAction="#toInsert" prefHeight="55.0" prefWidth="100.0" text="글쓰기">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
+      <HBox alignment="CENTER_RIGHT" layoutX="369.0" layoutY="525.0" prefHeight="100.0" prefWidth="467.0" spacing="20.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#toInsert" prefHeight="39.0" prefWidth="131.0" text="글쓰기">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#toModify" prefHeight="39.0" prefWidth="131.0" text="수정하기">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#toDelete" prefHeight="39.0" prefWidth="131.0" text="삭제">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

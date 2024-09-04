@@ -4,9 +4,9 @@ import java.io.IOException;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 
 public class Main extends Application {
@@ -15,13 +15,23 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage stage) throws IOException {
+	
 		scene = new Scene(loadFXML("Main"));
 		stage.setScene(scene);
 		stage.show();
+		
+	}
+	/**
+	 * Parent root를 가져와서 바로 화면 이동하는 메소드
+	 * @param root
+	 * @throws IOException
+	 */
+	static void setRoot(Parent root) throws IOException {
+		scene.setRoot(root);
 	}
 	
 	/**
-	 * Scene 의 컨테이너를 불러온 FXML로 지정하는 메소드
+	 * Scene의 컨테이너를 불러온 FXML로 지정하는 메소드
 	 * @param fxml
 	 * @throws IOException
 	 */
@@ -30,13 +40,24 @@ public class Main extends Application {
 	}
 	
 	/**
-	 * FXML 파일 읽어오는 메소드
+	 * FXML 파일 지정하여 FXMLLoader 객체 반환
+	 * @param fxml
+	 * @return
+	 * @throws IOException
+	 */
+	static FXMLLoader getFXML(String fxml) throws IOException {
+		FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxml+".fxml"));
+		return fxmlLoader;
+	}
+	
+	/**
+	 * FXML 파일을 읽어오는 메소드
 	 * @param fxml
 	 * @return
 	 * @throws IOException
 	 */
 	private static Parent loadFXML(String fxml) throws IOException {
-		FXMLLoader  fxmlLoader = new FXMLLoader(Main.class.getResource(fxml + ".fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxml+".fxml"));
 		return fxmlLoader.load();
 	}
 	
