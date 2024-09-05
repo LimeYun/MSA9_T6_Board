@@ -22,7 +22,7 @@ import javafx.scene.input.MouseEvent;
 public class ListController {
 
     @FXML
-    private TableView<Board> boardTableView;
+    public TableView<Board> boardTableView;
 
     @FXML
     private TableColumn<Board, Integer> colNo;
@@ -42,6 +42,7 @@ public class ListController {
     List<Board> boardList = null;
     private BoardService boardService = new BoardServiceImpl();
 
+    @FXML
     void initialize() {
     	boardList = boardService.list();
     	
@@ -63,15 +64,14 @@ public class ListController {
 					
 					try {
 						String fxml = "UI/Read";
-						FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxml + ".fxml"));
+						FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxml + ".fxml"));
 						Parent root = fxmlLoader.load();
 						
-						fxmlLoader.load();
 						ReadController readController = (ReadController)fxmlLoader.getController();
 						readController.passData(boardNo);
 						Main.setRoot(root);
 					} catch (Exception e) {
-						
+						System.err.println("List -> Read error");
 					}
 				}
 			}
@@ -89,5 +89,4 @@ public class ListController {
     	Main.setRoot("UI/Write");
 
     }
-
 }

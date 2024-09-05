@@ -6,20 +6,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller.WriteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller.ChangeController">
    <children>
-      <TextField fx:id="title" layoutX="150.0" layoutY="85.0" prefHeight="48.0" prefWidth="501.0" promptText="제목">
+      <TextField fx:id="chgTitle" layoutX="150.0" layoutY="85.0" prefHeight="48.0" prefWidth="501.0" promptText="제목">
          <font>
             <Font name="Arial" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="content" alignment="TOP_LEFT" layoutX="150.0" layoutY="230.0" prefHeight="333.0" prefWidth="731.0" promptText="내용을 작성하세요.">
+      <TextField fx:id="chgContent" alignment="TOP_LEFT" layoutX="150.0" layoutY="230.0" prefHeight="333.0" prefWidth="731.0" promptText="내용을 작성하세요.">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
       <Button layoutX="731.0" layoutY="573.0" mnemonicParsing="false" onAction="#upload" prefHeight="48.0" prefWidth="150.0" text="등록" />
-      <TextField fx:id="writer" layoutX="150.0" layoutY="155.0" prefHeight="48.0" prefWidth="245.0" promptText="작성자 이름">
+      <TextField fx:id="chgWriter" layoutX="150.0" layoutY="155.0" prefHeight="48.0" prefWidth="245.0" promptText="작성자 이름">
          <font>
             <Font name="Arial" size="15.0" />
          </font>
