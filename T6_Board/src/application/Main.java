@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	
 	private static Scene scene;
-	
+		
 	@Override
 	public void start(Stage stage) throws IOException {
 		scene = new Scene(loadFXML("UI/Main"), 930, 650);
