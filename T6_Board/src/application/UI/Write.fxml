@@ -13,7 +13,7 @@
             <Font name="Arial" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="content" alignment="TOP_LEFT" layoutX="150.0" layoutY="222.0" prefHeight="333.0" prefWidth="731.0" promptText="내용을 작성하세요.">
+      <TextField fx:id="content" alignment="TOP_LEFT" layoutX="150.0" layoutY="215.0" prefHeight="333.0" prefWidth="731.0" promptText="내용을 작성하세요.">
          <font>
             <Font size="15.0" />
          </font>

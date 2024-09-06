@@ -67,4 +67,10 @@ public class BoardServiceImpl implements BoardService {
 		return result;
 	}
 
+	@Override
+    public List<Board> search(String keyword) {
+        return boardDAO.search(keyword);
+    }
+	
+	
 }

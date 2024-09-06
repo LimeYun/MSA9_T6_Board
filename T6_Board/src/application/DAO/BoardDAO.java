@@ -194,5 +194,39 @@ public class BoardDAO extends JDBC {
 		return result;
 		
 	}
+	
+	public List<Board> search(String keyword) {
+		List<Board> boardList = new ArrayList<>();
+		
+		String sql = "SELECT * FROM board WHERE title LIKE ? OR writer Like ? OR content LIKE ?";
+		
+		try {
+			psmt = con.prepareStatement(sql);
+			
+			psmt.setString (1, "%" + keyword + "%");
+			psmt.setString (2, "%" + keyword + "%");
+			psmt.setString (3, "%" + keyword + "%");
+			
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				Board board = new Board();
+				board.setNo(rs.getInt("no"));
+				board.setTitle(rs.getString("title"));
+                board.setWriter(rs.getString("writer"));
+                board.setContent(rs.getString("content"));
+                board.setRegDate(rs.getTimestamp("reg_date"));
+                board.setUpdDate(rs.getTimestamp("upd_date"));
+                board.setView(rs.getInt("view"));
+
+                boardList.add(board);
+			}
+		}
+		catch (SQLException e) {
+			System.err.println("게시글 검색 불가");
+			e.printStackTrace();
+		}
+		return boardList;
+	}
 
 }
