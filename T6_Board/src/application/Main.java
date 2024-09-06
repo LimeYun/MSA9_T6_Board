@@ -4,9 +4,10 @@ import java.io.IOException;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
 
 
 public class Main extends Application {
@@ -15,9 +16,16 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage stage) throws IOException {
-		scene = new Scene(loadFXML("Main"), 600, 400);
+		scene = new Scene(loadFXML("UI/Main"));
+//		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		stage.setScene(scene);
+		
+//		Image icon = new Image("icon.png");
+//		stage.getIcons().add(icon);
+		stage.setTitle("T6_Board");
+		stage.setResizable(false);
 		stage.show();
+		
 	}
 	
 	/**
@@ -25,8 +33,11 @@ public class Main extends Application {
 	 * @param fxml
 	 * @throws IOException
 	 */
-	static void setRoot(String fxml) throws IOException {
+	public static void setRoot(String fxml) throws IOException {
 		scene.setRoot(loadFXML(fxml));
+	}
+	public static void setRoot(Parent root) throws IOException {
+		scene.setRoot(root);
 	}
 	
 	/**
@@ -40,7 +51,14 @@ public class Main extends Application {
 		return fxmlLoader.load();
 	}
 	
+	public static void exit() {
+		Stage stage = (Stage) scene.getWindow();
+		stage.close();
+	}
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
+	
 }
+	
