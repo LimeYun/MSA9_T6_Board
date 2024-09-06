@@ -3,10 +3,6 @@ package application.Controller;
 import java.io.IOException;
 import java.util.List;
 
-import application.Main;
-import application.DTO.Board;
-import application.Service.BoardService;
-import application.Service.BoardServiceImpl;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -18,6 +14,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import src.application.Main;
+import src.application.Service.BoardServiceImpl;
 
 public class ListController {
 
