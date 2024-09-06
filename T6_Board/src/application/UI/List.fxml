@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -25,5 +26,7 @@
       </TableView>
       <Button layoutX="49.0" layoutY="571.0" mnemonicParsing="false" onAction="#back" prefHeight="48.0" prefWidth="150.0" text="뒤로가기" />
       <Button layoutX="737.0" layoutY="571.0" mnemonicParsing="false" onAction="#toInsert" prefHeight="48.0" prefWidth="150.0" text="글쓰기" />
+      <TextField fx:id="search" layoutX="661.0" layoutY="45.0" prefHeight="34.0" prefWidth="175.0" />
+      <Button fx:id="searchB" layoutX="756.0" layoutY="86.0" mnemonicParsing="false" onAction="#toSearch" text="게시글 검색" />
    </children>
 </AnchorPane>
