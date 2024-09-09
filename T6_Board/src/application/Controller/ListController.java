@@ -95,30 +95,13 @@ public class ListController {
     void toInsert(ActionEvent event) throws IOException  {
     	Main.setRoot("UI/Write");
     }
-    
-//    @FXML
-//    void toSearch(ActionEvent event) throws IOException {
-//    	String keyword = "검색어";
-//    	List<Board> search = boardService.search(keyword);
-//    	
-//    }
-    
-//    @FXML
-//    void toSearch(ActionEvent event) throws IOException {
-//        // 검색어는 하드코딩된 예시로, 실제로는 사용자 입력을 받는 방식이 필요함
-//        String keyword = "검색어"; // 실제로는 사용자 입력으로 교체되어야 함
-//        List<Board> searchResults = boardService.search(keyword);
-//        updateTable(searchResults);
-//    }
 
     @FXML
     void toSearch(ActionEvent event) throws IOException {
         String keyword = search.getText(); 
         if (keyword.isEmpty()) {
-            // 검색어가 비어있으면 전체 게시글 목록을 가져옵니다
             boardList = boardService.list();
         } else {
-            // 검색어가 있을 경우, 검색 결과를 가져옵니다
             boardList = boardService.search(keyword);
         }
         updateTable(boardList);
